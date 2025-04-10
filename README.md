@@ -92,69 +92,7 @@
     
     ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
     
-- **b.Pin 功能描述**
-位号	脚位	说明	位号	脚位	说明
-1	P1.10	General-purpose I/O 
-(standard drive, low frequency I/O only)	2	P1.11	General-purpose I/O 
-(standard drive, low frequency I/O only)
-3	P1.12	General-purpose I/O 
-(standard drive, low frequency I/O only)	4	P1.13	General-purpose I/O 
-(standard drive, low frequency I/O only)
-5	P1.14	General-purpose I/O 
-(standard drive, low frequency I/O only)	6	P1.15	General-purpose I/O 
-(standard drive, low frequency I/O only)
-7	P0.03/AIN1	General-purpose I/O
- (standard drive, low frequency I/O only);
-Analog input	8	P0.29/AIN5	General-purpose I/O
- (standard drive, low frequency I/O only);
-Analog input
-9	P0.02/AIN0	General-purpose I/O
- (standard drive, low frequency I/O only);
-Analog input	10	P0.31/AIN7	General-purpose I/O
- (standard drive, low frequency I/O only);
-Analog input
-11	P0.28/AIN4	General-purpose I/O
- (standard drive, low frequency I/O only);
-Analog input	12	P0.30/AIN6	General-purpose I/O
- (standard drive, low frequency I/O only);
-Analog input
-13	P1.04	General-purpose I/O 
-(standard drive, low frequency I/O only)	14	P1.06	General-purpose I/O 
-(standard drive, low frequency I/O only)
-15	P0.27	General-purpose I/O	16	P1.07	General-purpose I/O 
-(standard drive, low frequency I/O only)
-17	P0.26	General-purpose I/O	18	P0.04/AIN2	General-purpose I/O;
-Analog input
-19	P0.05/AIN3	General-purpose I/O;
-Analog input	20	P0.06	General-purpose I/O
-21	P0.07/TRACECLK	General-purpose I/O;
-Trace buffer clock	22	P0.08	General-purpose I/O
-23	P1.08	General-purpose I/O	24	GND	Ground
-25	P0.10	General-purpose I/O	26	P0.09	General-purpose I/O
-27	P1.02	General-purpose I/O 
-(standard drive, low frequency I/O only)	28	P0.25	General-purpose I/O
-29	P0.24	General-purpose I/O	30	P1.00/TRACEDATA0	General-purpose I/O;
-Trace buffer TRACEDATA[0]
-31	P0.22	General-purpose I/O;
-(recommended usage: (QSPI)	32	P0.23	General-purpose I/O;
-(recommended usage: (QSPI)
-33	P0.20	General-purpose I/O	34	P0.21	General-purpose I/O;
-(recommended usage: (QSPI)
-35	P0.19	General-purpose I/O;
-(recommended usage: (QSPI / SCK)	36	P0.17	General-purpose I/O
-37	P0.18/nRESET	General-purpose I/O;
-Configurable as system RESET	38	P0.15	General-purpose I/O
-39	P0.16	General-purpose I/O	40	P0.13	General-purpose I/O
-41	P0.14	General-purpose I/O	42	P1.01	General-purpose I/O 
-(standard drive, low frequency I/O only)
-43	P1.03	General-purpose I/O 
-(standard drive, low frequency I/O only)	44	P1.05	General-purpose I/O 
-(standard drive, low frequency I/O only)
-45	P0.12/TRACEDATA1	General-purpose I/O;
-Trace buffer TRACEDATA[1]	46	P0.11/TRACEDATA2	General-purpose I/O;
-Trace buffer TRACEDATA[2]
-47	P1.09/TRACEDATA3	General-purpose I/O;
-Trace buffer TRACEDATA[3]	48	GND	Ground
+
 
 ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
 
