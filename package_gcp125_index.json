@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "GreenChip GCP125 Boards", 
+          "name": "GreenChip_GCP125", 
           "architecture": "nrf52", 
           "version": "0.3.15", 
           "category": "Contributed", 
