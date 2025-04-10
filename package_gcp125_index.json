@@ -16,8 +16,8 @@
           "category": "Contributed", 
           "url": "https://github.com/GreenChipJM/GCP125_nRF52_0.3.15/releases/download/v0.3.15/GCP125.zip", 
           "archiveFileName": "GCP125.zip", 
-          "checksum": "SHA-256:5294aa6f4c69f56f11bcae767d7f6e4956e9ad91ffe3b4aa3f6b20ae17b1aa2c", 
-          "size": 168179042, 
+          "checksum": "SHA-256:6be07f16ecdeda1b511f8f024c0682cf5f017ac44591ecc4cd7ab5f3fe3b0849", 
+          "size": 18580861, 
           "boards": [
             { "name": "GreenChip GCP125 nRF52" }
           ],
