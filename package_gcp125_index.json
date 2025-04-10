@@ -14,7 +14,7 @@
           "architecture": "nrf52", 
           "version": "0.3.15", 
           "category": "Contributed", 
-          "url": "https://github.com/GreenChipJM/GCP125_nRF52_0.3.15/releases/download/v0.3.15/GCP125_nRF52_0.3.15.zip", 
+          "url": "https://github.com/GreenChipJM/GCP125_nRF52_0.3.15/releases/download/v0.3.15/GCP125.zip", 
           "archiveFileName": "GCP125_nrf52_0.3.15.zip", 
           "checksum": "SHA-256:ace05782372c58d6703ef048adba1198780849b56b5d2f99f6a29d54457ee4cf", 
           "size": 18600373, 
