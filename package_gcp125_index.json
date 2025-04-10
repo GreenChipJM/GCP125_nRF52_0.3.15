@@ -23,12 +23,12 @@
           ],
           "toolsDependencies": [
 			{
-              "packager": "Yutech",
+              "packager": "GreenChip",
               "name": "arm-none-eabi-gcc",
               "version": "9-2019q4"
             },
             {
-              "packager": "Yutech",
+              "packager": "GreenChip",
               "name": "nrfjprog",
               "version": "9.4.0"
             }
