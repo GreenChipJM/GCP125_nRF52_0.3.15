@@ -1,0 +1,55 @@
+{
+  "packages": [
+    {
+      "name": "GreenChip_nRF52", // 你的包名，用户在 Boards Manager 搜索时会看到
+      "maintainer": "GreenChip", // 你的名字或组织名
+      "websiteURL": "https://github.com/GreenChipJM/GCP125_nRF52_0.3.15", // 你的项目网址
+      "email": "<admin1@greenchip.top>", // 你的联系邮箱 (可选)
+      "help": {
+        "online": "https://github.com/GreenChipJM/GCP125/Readme" // 帮助文档链接 (可选, 可以指向 Wiki 或 Readme)
+      },
+      "platforms": [
+        {
+          "name": "GreenChip GCP125 Boards", // 平台名称，用户在 Boards Manager 看到的名字
+          "architecture": "nrf52", // 必须和你的硬件包架构匹配
+          "version": "0.3.15", // 当前版本号，必须和你的 Tag/Release 一致
+          "category": "Contributed", // 通常是 "Contributed"
+          "url": "<https://github.com/GreenChipJM/GCP125_nRF52_0.3.15/releases/download/v0.3.15/GCP125_nRF52_0.3.15.zip>", // 第 2 步获取的 .zip 文件下载 URL
+          "archiveFileName": "GCP125_nrf52_0.3.15.zip", // 压缩包的文件名
+          "checksum": "SHA-256:<cbb4f6cd9c79e71cd400692a74727dd16a64c476ddd5bae8b7ff6696a7e64fd1 *GCP125_nRF52_0.3.15.zip>", // 格式为 "SHA-256:" 加上哈希值
+          "size": "<18568621>", // 文件大小 (纯数字)
+          "boards": [
+            // 列出你的 boards.txt 文件中定义的所有 board 的 "name"
+            // 例如: { "name": "GCP125 Dev Board" },
+            // 你需要查看你的 boards.txt 文件来填充这里
+            { "name": "<GCP125_nRF52 from boards.txt>" }
+            // ... 其他板子
+          ],
+          "toolsDependencies": [
+            // 列出这个硬件包运行所必需的工具链依赖
+            // 很多 nRF52 包可能依赖 Nordic 或 Adafruit 的工具包
+            // 例如 (需要根据你的 platform.txt 确认):
+            // {
+            //   "packager": "arduino",
+            //   "name": "arm-none-eabi-gcc",
+            //   "version": "7-2017q4"
+            // },
+            // {
+            //   "packager": "adafruit",
+            //   "name": "adafruit-nrfutil",
+            //   "version": "0.5.2-adafruit.1" // 版本号需要确认
+            // }
+            // 如果你的工具是随压缩包一起发布的(在 tools/ 目录下), 可能不需要在这里列出。
+            // 查看 platform.txt 文件确定需要哪些外部工具。
+          ]
+        }
+        // 如果未来发布新版本 (例如 0.3.16), 你需要在这里添加一个新的 platform 对象，
+        // 保留旧版本的对象，这样用户可以选择安装不同版本。
+      ],
+      "tools": [
+        // 如果你的硬件包依赖你自己打包的工具 (放在压缩包的 tools/ 目录下),
+        // 你可能需要在这里定义它们。但通常是依赖 Arduino 或其他包提供的工具。
+      ]
+    }
+  ]
+}
