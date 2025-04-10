@@ -41,13 +41,13 @@
     
     - 将传感器板插入GCP125母板，然后将电极线的3.5mm头插入传感板，电极人体太阳穴两端
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image1.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image3.png?raw=true)
     
     - Android 应用程序：扫描、连接，然后转动眼球开始显示生物信号
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image1.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image4.png?raw=true)
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image1.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image5.png?raw=true)
     
 - **D. 其他不同情况的固件：**
     - 用于**无线**通信
