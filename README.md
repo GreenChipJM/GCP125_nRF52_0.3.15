@@ -242,4 +242,4 @@ This document includes the following content:
 
 **Q2 -> If you cannot find GCP125 under Tools > Board in Arduino IDE**
 
-Please download the latest version of Arduino IDE.
+  Please download the latest version of Arduino IDE.
