@@ -1,20 +1,18 @@
 # GCP125
 
-# GCP125
-
 # **GCP125**
 
 - 可穿戴设备生物医学开发平台
-    - 硬件 - 单通道GCP125 蓝牙主板 / 生物传感器板 （ECG、EMG、PPG、EEG）
-    - 固件 - 使用 Arduino IDE 开发或恢复 GCP125蓝牙主板
-    - 软件 - 适用于 GCP125 的 IOS、Android 应用程序
+    - **硬件**：单通道 GCP125 蓝牙主板及生物传感器板（支持 ECG、EMG、PPG、EEG）
+    - **固件**：基于 Arduino IDE 开发的出厂固件与多种应用固件
+    - 软件 - 适用于 GCP125 的Android 应用程序
 
-# **固件**
+# 目录
 
 本文档包括以下内容：
 
-1. **[对于用户]** 使用**出厂设置**轻松获取主板 和传感器板的数据。
-2. [对于开发人员]您需要了解的有关 GCP125 作为微控制器的基本信息。
+1. **[用户指南]** 使用**出厂设置**轻松获取主板 和传感器板的数据。
+2. [开发者指南] 您需要了解的有关 GCP125 的基本信息。
     
     **A. GCP125 描述**
     
@@ -22,7 +20,7 @@
     
 3. 常见问题 **（FAQ）**
 
-# 1. [用户端] GCP125出厂设置和使用
+# 1. [用户指南] GCP125出厂设置和使用
 
 - **A. GCP125有 1 个通道用于连接传感器板。**
 
@@ -32,22 +30,39 @@
     - 选择传感器板和软件
         - 传感器板：ECG、EEG、EMG、PPG
         - 软件 - 适用于 GCP125 的Android 应用程序
+    - 各传感器粘贴人体的方式
+        1. ECG
+        
+        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image2.png?raw=true)
+        
+        1. EEG
+        
+        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image3.png?raw=true)
+        
+        1. EMG
+        
+        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image4.png?raw=true)
+        
+        1. PPG
+        
+        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image5.png?raw=true)
+        
     - 在GCP125上组装传感器板。
     - 连接GCP125和APP，然后获得生物信号
 - **C. 一个启动示例：**
     - 选择EEG子板作为传感器板，然后选择Android应用程序作为软件
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image2.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image6.png?raw=true)
     
-    - 将传感器板插入GCP125母板，然后将电极线的3.5mm头插入传感板，电极人体太阳穴两端
+    - 将传感器板插入GCP125母板，然后将电极线的3.5mm插头头插入传感板，电极线另一端安装两片电极贴，电极贴在人体太阳穴两端
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image3.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image7.png?raw=true)
     
-    - Android 应用程序：扫描、连接，然后转动眼球开始显示生物信号
+    - Android 应用程序：打开APP并搜索、连接ALANO BLE，然后转动眼球开始显示生物信号
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image4.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image8.png?raw=true)
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image5.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image9.png?raw=true)
     
 - **D. 其他不同情况的固件：**
     - 用于**无线**通信
@@ -57,42 +72,58 @@
             - GCP125 PPG_BT：GCP125母板上LED会随心跳脉冲闪烁
             - GCP125 EEG_BT：GCP125母板上LED会随眼睛左右看控制其亮灭
             - GCP125 EMG_BT：GCP125母板上LED会肌肉收缩点亮
-        - 软件：安卓（BLE102）
 - **E.如何将出厂设置固件更改为其他固件？**
-    - **Arduino BSP 方法**
-        - **a**. 将GCP125.rar放到C:\Users\admin\AppData\Local\Arduino15\packages目录下解压
-        - **b**. 启动 Arduino IDE
-        - **c**. 选择工具 > 开发板 > GCP125 Board（nRF52 Series）> GCP125 nRF52840
-            
-            ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image6.png?raw=true)
-            
-        - **d**. 选择工具 > 编程器 > GCP125 Official Firmware
-            
-            ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image7.png?raw=true)
-            
-        - **e**. 选择工具 > 端口 > COMXX (GCP125 nRF52840)
-            
-            ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image8.png?raw=true)
-            
-        - **f**. 选择工具 > 烧录引导程序
-        - **g**. 等待大约 5~10 秒，如果跳出以下表扬，则表示**未成功**，请按照以下步骤操作。
-            
-            ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image9.png?raw=true)
-            
-        - **h**. 选择工具 > 端口 > COMYY (GCP125 nRF52840)**（YY 不会等于 XX）**
-        - **i**. 选择工具 > 烧录引导程序
-        - **j**. 等待大约 10~30 秒，如果显示以下表扬，则表示**成功**。
-            
-            ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
-            
+    - **a**. 将GCP125蓝牙主板与PC通过USB转USB MINI连接线连接起来
+    - b. [安装最新版Arduino IDE](https://www.arduino.cc/en/software/)
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
+    
+    - c. 启动Arduino ADE，点击File > Preferences，点击Additional boards manager URLs，将[https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json](https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json)填入并点击OK
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
+    
+    - d. 点击Tools > Board > Boards Manager
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
+    
+    - e. 在弹出的界面点击搜索栏输入GreenChip, 然后点击INSTALL
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image13.png?raw=true)
+    
+    - f. 选择Tools > Board > GreenChip GCP125 > GCP125 nRF52840
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image14.png?raw=true)
+    
+    - g. 选择Tools > Programmer > GCP125 ECG_BT
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image15.png?raw=true)
+    
+    - h. 选择Tools> Port > COMXX (GCP125 nRF52840)
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
+    
+    - i. 选择Tools > Burn Bootloader
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image17.png?raw=true)
+    
+    - j. 等待大约 5~10 秒，如果跳出以下表扬，则表示**未成功**，请按照以下步骤操作。
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image18.png?raw=true)
+    
+    - k. 选择Tools > Port > COMYY (GCP125 nRF52840)**（YY 不会等于 XX）**
+    - l. 选择Tools > Burn Bootloader
+    - m. 等待大约 10~20 秒，如果显示以下表扬，则表示**成功**。
+    
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image19.png?raw=true)
+    
 
-# **2. [对于开发人员] GCP125 出厂设置和使用**
+# **2. [开发者指南] GCP125 固件开发**
 
 **A. GCP125 描述**
 
 - a. 引脚配置
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image20.png?raw=true)
     
     | 位号 | 脚位 | 说明 | 位号 | 脚位 | 说明 |
     | --- | --- | --- | --- | --- | --- |
@@ -147,84 +178,76 @@
 
 **B. 在 Arduino IDE 上使用 GCP125 进行开发**
 
-- ***a. 环境建立***：将我司提供的GCP125.rar放到C:\Users\admin\AppData\Local\Arduino15\packages目录下解压
-    - I. [下载并安装 Arduino IDE](https://www.arduino.cc/en/Main/Software)（最新版）
-        - 选择操作系统的版本。
-        - 直接按捐赠页面中的**“Just Download”。**
-            
-            ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
-            
-    - II. 将GCP125.rar放到C:\Users\admin\AppData\Local\Arduino15\packages目录下解压
-    - III. 启动 Arduino IDE
-    - IV. 选择 Boards Manager
-        - 选择工具 > 开发板 > GCP125 Board（nRF52 Series）> GCP125 nRF52840
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image17.png?raw=true)
-        
-- **b. 上传并运行您的代码**
-    - I. 选择一个示例代码或制作您自己的代码。文件 > 示例 > GCP125 > ECG_BT
-    - II. 将 GCP125母板与 PC 连接。（建议：使用 USB 作为电源）
-    - III. 选择工具 > 开发板 > GCP125 Board（nRF52 Series）> GCP125 nRF52840
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image18.png?raw=true)
-        
-    - IV. 选择工具 > 端口 > COMXX (GCP125 nRF52840)
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image19.png?raw=true)
-        
-    - V. 按 （编译 + 上传），或按 （编译），然后按 （上传））。
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image20.png?raw=true)
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image21.png?raw=true)
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image22.png?raw=true)
-        
-    - **上传成功 👋 显示 Device programmed （设备已编程）**
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image23.png?raw=true)
-        
+- **a**. 将GCP125蓝牙主板与PC通过USB转USB MINI连接线连接起来
+- b. [安装最新版Arduino ADE](https://www.arduino.cc/en/software/)
 
-**附录。如果你遇到了什么麻烦......尝试重新烧录 Bootloader!!!**
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
 
-方法 1：仅通过 USB 数据线将 GCP125-MDBT50Q板连接到 PC。
+- c. 启动Arduino ADE，点击File > Preferences，点击Additional boards manager URLs，将[https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json](https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json)填入并点击OK
 
-方法 2： 通过 J-Link 设备和 USB 数据线将GCP125-MDBT50Q板连接到 PC。（仅限致命错误）
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
 
-- -----------------------------------------------------------**方法 1**
-- I. 选择工具 > 开发板 > GCP125 Board（nRF52 Series）> GCP125 nRF52840
-- II. 选择工具 > 端口 > COMXX (GCP125 nRF52840)
-- III. 选择工具 > 编程器 > GCP125 Official Firmware
-- IV. 选择工具 >烧录引导程序
-- V. 等待约 20~30 秒。
+- d. 点击Tools > Board > Boards Manager
+
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
+
+- e. 在弹出的界面点击搜索栏输入GreenChip, 然后点击INSTALL
+
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image13.png?raw=true)
+
+- f. 选择FIle > Examples > GCP125 > ECG_BT或其他示例
+
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image21.png?raw=true)
+
+- g. 选择Tools > Board > GreenChip GCP125 > GCP125 nRF52840
+
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image14.png?raw=true)
+
+- h. 选择Tools> Port > COMXX (GCP125 nRF52840)
+
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image15.png?raw=true)
+
+- i. 按下编译+上传按键, 等待烧录, 烧录成功显示Device programmed
+
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image22.png?raw=true)
+
+**C. 附录。如果你遇到了什么麻烦......尝试重新烧录 Bootloader!!!**
+
+方法 1：仅通过 USB 数据线将 GCP125蓝牙主板板连接到 PC。
+
+- I. 选择Tools > Board > GreenChip GCP125> GCP125 nRF52840
+- II. 选择Tools > Port > COMXX (GCP125 nRF52840)
+- III. 选择Tools > Programmer > GCP125 Official Firmware
+- IV. 选择Tools > Burn Bootloader
+- V. 等待约 10~20 秒。
 - **成功刻录的图**
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image24.png?raw=true)
-    
 
-**方法 2**
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image23.png?raw=true)
+
+方法 2： 通过 J-Link 设备和 USB 数据线将GCP125蓝牙主板连接到 PC。（仅限致命错误）
 
 - I. 要使用 J-Link，用户应在此处安装驱动程序[**。**](https://www.segger.com/downloads/jlink/)
 - II. 选择您的操作系统并点击下载。
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image25.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image24.png?raw=true)
     
 - III. 安装驱动程序。
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image26.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image25.png?raw=true)
     
 - IV. 将 GCP125-MDBT50Q和 J-link 连接到您的 PC。
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image27.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image26.png?raw=true)
     
 - V. 启动 Arduino IDE。
-- VI. 选择工具 > 端口 > COMZ（J-Link端口）
-- VII. 选择工具 > 编程器 > J-Link for GCP125 nRF52
-- VIII. 选择工具 >烧录引导程序
-- IX. 等待约 20~30 秒。
+- VI. 选择Tools > Board > GreenChip GCP125> GCP125 nRF52840
+- VII. 选择Tools > Port > COMXX (GCP125 nRF52840)
+- VIII. 选择Tools > Programmer > J-Link for GCP125 nRF52
+- IX. 选择Tools > Burn Bootloader
+- X. 等待约 10~20 秒。
 - **成功刻录的图**
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image28.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image27.png?raw=true)
     
 
 # **3. [常见问题 （FAQ）]**
@@ -233,10 +256,10 @@
 
 1. 请确认你的 arduino IDE 在执行GCP125**默认固件 / 应用程序 - 固件设置步骤**中的步骤后，是否有下图所示的注释。
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image29.png?raw=true)
+    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image28.png?raw=true)
     
 2. 请勿移除您的设备并重新执行GCP125 **默认固件/应用程序 - 固件设置步骤**的第 4~5 步。
 
 **Q2 -> 如果您在 Arduino IDE 中工具 > 开发板无法找到GCP125**
 
-1. 请下载最新的 Arduino IDE 版本。
+请下载最新的 Arduino IDE 版本。
