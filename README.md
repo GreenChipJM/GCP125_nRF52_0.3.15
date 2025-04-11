@@ -205,7 +205,7 @@
 
 - h. 选择Tools> Port > COMXX (GCP125 nRF52840)
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image15.png?raw=true)
+![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
 
 - i. 按下编译+上传按键, 等待烧录, 烧录成功显示Device programmed
 
