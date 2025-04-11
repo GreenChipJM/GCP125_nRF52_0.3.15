@@ -1,263 +1,245 @@
 # **GCP125**
 
-- 可穿戴设备生物医学开发平台
-    - **硬件**：单通道 GCP125 蓝牙主板及生物传感器板（支持 ECG、EMG、PPG、EEG）
-    - **固件**：基于 Arduino IDE 开发的出厂固件与多种应用固件
-    - 软件 - 适用于 GCP125 的Android 应用程序
+- Wearable Biomedical Development Platform
+  - **Hardware**: Single-channel GCP125 Bluetooth mainboard and biosensor board (supports ECG, EMG, PPG, EEG)
+  - **Firmware**: Factory firmware developed based on Arduino IDE, along with various application firmware
+  - **Software**: Android application for GCP125
 
-# 目录
+# Table of Contents
 
-本文档包括以下内容：
+This document includes the following content:
 
-1. **[用户指南]** 使用**出厂设置**轻松获取主板 和传感器板的数据。
-2. [开发者指南] 您需要了解的有关 GCP125 的基本信息。
-    
-    **A. GCP125 描述**
-    
-    **B. 使用Arduino IDE 进行开发**
-    
-3. 常见问题 **（FAQ）**
+1. **[User Guide]** Easily obtain data from the mainboard and sensor board using **factory settings**.
+2. **[Developer Guide]** Essential information you need to know about GCP125.
+   - **A. GCP125 Description**
+   - **B. Development with Arduino IDE**
+3. **Frequently Asked Questions (FAQ)**
 
-# 1. [用户指南] GCP125出厂设置和使用
+# 1. [User Guide] GCP125 Factory Settings and Usage
 
-- **A. GCP125有 1 个通道用于连接传感器板。**
+- **A. GCP125 has 1 channel for connecting the sensor board.**
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image1.png?raw=true)
+![Sensor Board](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image1.png?raw=true)
 
-- **B. 快速启动步骤：**
-    - 选择传感器板和软件
-        - 传感器板：ECG、EEG、EMG、PPG
-        - 软件 - 适用于 GCP125 的Android 应用程序
-    - 各传感器粘贴人体的方式
-        1. ECG
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image2.png?raw=true)
-        
-        1. EEG
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image3.png?raw=true)
-        
-        1. EMG
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image4.png?raw=true)
-        
-        1. PPG
-        
-        ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image5.png?raw=true)
-        
-    - 在GCP125上组装传感器板。
-    - 连接GCP125和APP，然后获得生物信号
-- **C. 一个启动示例：**
-    - 选择EEG子板作为传感器板，然后选择Android应用程序作为软件
+- **B. Quick Start Steps:**
+  - Select the sensor board and software
+    - Sensor Boards: ECG, EEG, EMG, PPG
+    - Software: Android application for GCP125
+  - Placement of sensors on the body
+    1. ECG
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image6.png?raw=true)
+    ![ECG Placement](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image2.png?raw=true)
     
-    - 将传感器板插入GCP125母板，然后将电极线的3.5mm插头头插入传感板，电极线另一端安装两片电极贴，电极贴在人体太阳穴两端
+    2. EEG
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image7.png?raw=true)
+    ![EEG Placement](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image3.png?raw=true)
     
-    - Android 应用程序：打开APP并搜索、连接ALANO BLE，然后转动眼球开始显示生物信号
+    3. EMG
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image8.png?raw=true)
+    ![EMG Placement](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image4.png?raw=true)
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image9.png?raw=true)
+    4. PPG
     
-- **D. 其他不同情况的固件：**
-    - 用于**无线**通信
-        - 固件：
-            - GCP125 Official Firmware：GCP125出厂固件
-            - GCP125 ECG_BT：GCP125母板上LED会随心跳脉冲闪烁
-            - GCP125 PPG_BT：GCP125母板上LED会随心跳脉冲闪烁
-            - GCP125 EEG_BT：GCP125母板上LED会随眼睛左右看控制其亮灭
-            - GCP125 EMG_BT：GCP125母板上LED会肌肉收缩点亮
-- **E.如何将出厂设置固件更改为其他固件？**
-    - **a**. 将GCP125蓝牙主板与PC通过USB转USB MINI连接线连接起来
-    - b. [安装最新版Arduino IDE](https://www.arduino.cc/en/software/)
+    ![PPG Placement](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image5.png?raw=true)
     
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
-    
-    - c. 启动Arduino ADE，点击File > Preferences，点击Additional boards manager URLs，将[https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json](https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json)填入并点击OK
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
-    
-    - d. 点击Tools > Board > Boards Manager
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
-    
-    - e. 在弹出的界面点击搜索栏输入GreenChip, 然后点击INSTALL
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image13.png?raw=true)
-    
-    - f. 选择Tools > Board > GreenChip GCP125 > GCP125 nRF52840
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image14.png?raw=true)
-    
-    - g. 选择Tools > Programmer > GCP125 ECG_BT
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image15.png?raw=true)
-    
-    - h. 选择Tools> Port > COMXX (GCP125 nRF52840)
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
-    
-    - i. 选择Tools > Burn Bootloader
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image17.png?raw=true)
-    
-    - j. 等待大约 5~10 秒，如果跳出以下表扬，则表示**未成功**，请按照以下步骤操作。
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image18.png?raw=true)
-    
-    - k. 选择Tools > Port > COMYY (GCP125 nRF52840)**（YY 不会等于 XX）**
-    - l. 选择Tools > Burn Bootloader
-    - m. 等待大约 10~20 秒，如果显示以下表扬，则表示**成功**。
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image19.png?raw=true)
-    
+  - Assemble the sensor board onto the GCP125.
+  - Connect GCP125 to the app and obtain biosignals.
+- **C. A Startup Example:**
+  - Select the EEG sub-board as the sensor board and the Android application as the software.
+  
+  ![EEG Setup](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image6.png?raw=true)
+  
+  - Insert the sensor board into the GCP125 mainboard, plug the 3.5mm electrode cable into the sensor board, and attach two electrode patches to the other end of the cable. Place the electrode patches on both temples of the human body.
+  
+  ![Electrode Connection](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image7.png?raw=true)
+  
+  - Android Application: Open the app, search for and connect to ALANO BLE, then move your eyes to start displaying biosignals.
+  
+  ![App Connection](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image8.png?raw=true)
+  
+  ![Biosignal Display](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image9.png?raw=true)
+  
+- **D. Firmware for Other Scenarios:**
+  - For **wireless** communication
+    - Firmware:
+      - GCP125 Official Firmware: Factory firmware for GCP125
+      - GCP125 ECG_BT: LED on the GCP125 mainboard blinks with heart pulses
+      - GCP125 PPG_BT: LED on the GCP125 mainboard blinks with heart pulses
+      - GCP125 EEG_BT: LED on the GCP125 mainboard turns on/off based on left/right eye movement
+      - GCP125 EMG_BT: LED on the GCP125 mainboard lights up with muscle contraction
+- **E. How to Change Factory Firmware to Other Firmware?**
+  - **a.** Connect the GCP125 Bluetooth mainboard to a PC using a USB-to-USB Mini cable.
+  - **b.** [Install the latest version of Arduino IDE](https://www.arduino.cc/en/software/)
+  
+  ![Arduino IDE Installation](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
+  
+  - **c.** Launch Arduino IDE, click *File > Preferences*, click *Additional Boards Manager URLs*, enter [https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json](https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json), and click *OK*.
+  
+  ![Preferences](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
+  
+  - **d.** Click *Tools > Board > Boards Manager*.
+  
+  ![Boards Manager](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
+  
+  - **e.** In the pop-up window, type *GreenChip* in the search bar and click *INSTALL*.
+  
+  ![Install GreenChip](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image13.png?raw=true)
+  
+  - **f.** Select *Tools > Board > GreenChip GCP125 > GCP125 nRF52840*.
+  
+  ![Select Board](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image14.png?raw=true)
+  
+  - **g.** Select *Tools > Programmer > GCP125 ECG_BT*.
+  
+  ![Select Programmer](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image15.png?raw=true)
+  
+  - **h.** Select *Tools > Port > COMXX (GCP125 nRF52840)*.
+  
+  ![Select Port](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
+  
+  - **i.** Select *Tools > Burn Bootloader*.
+  
+  ![Burn Bootloader](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image17.png?raw=true)
+  
+  - **j.** Wait for approximately 5–10 seconds. If the following message appears, it indicates **failure**. Follow the steps below.
+  
+  ![Failure Message](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image18.png?raw=true)
+  
+  - **k.** Select *Tools > Port > COMYY (GCP125 nRF52840)* (**YY will not equal XX**).
+  - **l.** Select *Tools > Burn Bootloader*.
+  - **m.** Wait for approximately 10–20 seconds. If the following message appears, it indicates **success**.
+  
+  ![Success Message](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image19.png?raw=true)
 
-# **2. [开发者指南] GCP125 固件开发**
+# **2. [Developer Guide] GCP125 Firmware Development**
 
-**A. GCP125 描述**
+**A. GCP125 Description**
 
-- a. 引脚配置
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image20.png?raw=true)
-    
-    | 位号 | 脚位 | 说明 | 位号 | 脚位 | 说明 |
-    | --- | --- | --- | --- | --- | --- |
-    | 1 | P1.10 | General-purpose I/O | 2 | P1.11 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only) |  |  | (standard drive, low frequency I/O only) |
-    | 3 | P1.12 | General-purpose I/O | 4 | P1.13 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only) |  |  | (standard drive, low frequency I/O only) |
-    | 5 | P1.14 | General-purpose I/O | 6 | P1.15 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only) |  |  | (standard drive, low frequency I/O only) |
-    | 7 | P0.03/AIN1 | General-purpose I/O | 8 | P0.29/AIN5 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only); |  |  | (standard drive, low frequency I/O only); |
-    |  |  | Analog input |  |  | Analog input |
-    | 9 | P0.02/AIN0 | General-purpose I/O | 10 | P0.31/AIN7 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only); |  |  | (standard drive, low frequency I/O only); |
-    |  |  | Analog input |  |  | Analog input |
-    | 11 | P0.28/AIN4 | General-purpose I/O | 12 | P0.30/AIN6 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only); |  |  | (standard drive, low frequency I/O only); |
-    |  |  | Analog input |  |  | Analog input |
-    | 13 | P1.04 | General-purpose I/O | 14 | P1.06 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only) |  |  | (standard drive, low frequency I/O only) |
-    | 15 | P0.27 | General-purpose I/O | 16 | P1.07 | General-purpose I/O |
-    |  |  |  |  |  | (standard drive, low frequency I/O only) |
-    | 17 | P0.26 | General-purpose I/O | 18 | P0.04/AIN2 | General-purpose I/O; |
-    |  |  |  |  |  | Analog input |
-    | 19 | P0.05/AIN3 | General-purpose I/O; | 20 | P0.06 | General-purpose I/O |
-    |  |  | Analog input |  |  |  |
-    | 21 | P0.07/TRACECLK | General-purpose I/O; | 22 | P0.08 | General-purpose I/O |
-    |  |  | Trace buffer clock |  |  |  |
-    | 23 | P1.08 | General-purpose I/O | 24 | GND | Ground |
-    | 25 | P0.10 | General-purpose I/O | 26 | P0.09 | General-purpose I/O |
-    | 27 | P1.02 | General-purpose I/O | 28 | P0.25 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only) |  |  |  |
-    | 29 | P0.24 | General-purpose I/O | 30 | P1.00/TRACEDATA0 | General-purpose I/O; |
-    |  |  |  |  |  | Trace buffer TRACEDATA[0] |
-    | 31 | P0.22 | General-purpose I/O; | 32 | P0.23 | General-purpose I/O; |
-    |  |  | (recommended usage: (QSPI) |  |  | (recommended usage: (QSPI) |
-    | 33 | P0.20 | General-purpose I/O | 34 | P0.21 | General-purpose I/O; |
-    |  |  |  |  |  | (recommended usage: (QSPI) |
-    | 35 | P0.19 | General-purpose I/O; | 36 | P0.17 | General-purpose I/O |
-    |  |  | (recommended usage: (QSPI / SCK) |  |  |  |
-    | 37 | P0.18/nRESET | General-purpose I/O; | 38 | P0.15 | General-purpose I/O |
-    |  |  | Configurable as system RESET |  |  |  |
-    | 39 | P0.16 | General-purpose I/O | 40 | P0.13 | General-purpose I/O |
-    | 41 | P0.14 | General-purpose I/O | 42 | P1.01 | General-purpose I/O |
-    |  |  |  |  |  | (standard drive, low frequency I/O only) |
-    | 43 | P1.03 | General-purpose I/O | 44 | P1.05 | General-purpose I/O |
-    |  |  | (standard drive, low frequency I/O only) |  |  | (standard drive, low frequency I/O only) |
-    | 45 | P0.12/TRACEDATA1 | General-purpose I/O; | 46 | P0.11/TRACEDATA2 | General-purpose I/O; |
-    |  |  | Trace buffer TRACEDATA[1] |  |  | Trace buffer TRACEDATA[2] |
-    | 47 | P1.09/TRACEDATA3 | General-purpose I/O; | 48 | GND | Ground |
-    |  |  | Trace buffer TRACEDATA[3] |  |  |  |
+- **a. Pin Configuration**
+  
+  ![Pinout](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image20.png?raw=true)
+  
+  | Pin No. | Pin | Description | Pin No. | Pin | Description |
+  |---------|-------|-------------|---------|-------|-------------|
+  | 1 | P1.10 | General-purpose I/O | 2 | P1.11 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only) |   |   | (standard drive, low frequency I/O only) |
+  | 3 | P1.12 | General-purpose I/O | 4 | P1.13 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only) |   |   | (standard drive, low frequency I/O only) |
+  | 5 | P1.14 | General-purpose I/O | 6 | P1.15 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only) |   |   | (standard drive, low frequency I/O only) |
+  | 7 | P0.03/AIN1 | General-purpose I/O | 8 | P0.29/AIN5 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only); Analog input |   |   | (standard drive, low frequency I/O only); Analog input |
+  | 9 | P0.02/AIN0 | General-purpose I/O | 10 | P0.31/AIN7 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only); Analog input |   |   | (standard drive, low frequency I/O only); Analog input |
+  | 11 | P0.28/AIN4 | General-purpose I/O | 12 | P0.30/AIN6 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only); Analog input |   |   | (standard drive, low frequency I/O only); Analog input |
+  | 13 | P1.04 | General-purpose I/O | 14 | P1.06 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only) |   |   | (standard drive, low frequency I/O only) |
+  | 15 | P0.27 | General-purpose I/O | 16 | P1.07 | General-purpose I/O |
+  |   |   |   |   |   | (standard drive, low frequency I/O only) |
+  | 聚焦 | P0.26 | General-purpose I/O | 18 | P0.04/AIN2 | General-purpose I/O; Analog input |
+  | 19 | P0.05/AIN3 | General-purpose I/O; Analog input | 20 | P0.06 | General-purpose I/O |
+  | 21 | P0.07/TRACECLK | General-purpose I/O; Trace buffer clock | 22 | P0.08 | General-purpose I/O |
+  | 23 | P1.08 | General-purpose I/O | 24 | GND | Ground |
+  | 25 | P0.10 | General-purpose I/O | 26 | P0.09 | General-purpose I/O |
+  | 27 | P1.02 | General-purpose I/O | 28 | P0.25 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only) |   |   |   |
+  | 29 | P0.24 | General-purpose I/O | 30 | P1.00/TRACEDATA0 | General-purpose I/O; Trace buffer TRACEDATA[0] |
+  | 31 | P0.22 | General-purpose I/O; (recommended usage: QSPI) | 32 | P0.23 | General-purpose I/O; (recommended usage: QSPI) |
+  | 33 | P0.20 | General-purpose I/O | 34 | P0.21 | General-purpose I/O; (recommended usage: QSPI) |
+  | 35 | P0.19 | General-purpose I/O; (recommended usage: QSPI / SCK) | 36 | P0.17 | General-purpose I/O |
+  | 37 | P0.18/nRESET | General-purpose I/O; Configurable as system RESET | 38 | P0.15 | General-purpose I/O |
+  | 39 | P0.16 | General-purpose I/O | 40 | P0.13 | General-purpose I/O |
+  | 41 | P0.14 | General-purpose I/O | 42 | P1.01 | General-purpose I/O |
+  |   |   |   |   |   | (standard drive, low frequency I/O only) |
+  | 43 | P1.03 | General-purpose I/O | 44 | P1.05 | General-purpose I/O |
+  |   |   | (standard drive, low frequency I/O only) |   |   | (standard drive, low frequency I/O only) |
+  | 45 | P0.12/TRACEDATA1 | General-purpose I/O; Trace buffer TRACEDATA[1] | 46 | P0.11/TRACEDATA2 | General-purpose I/O; Trace buffer TRACEDATA[2] |
+  | 47 | P1.09/TRACEDATA3 | General-purpose I/O; Trace buffer TRACEDATA[3] | 48 | GND | Ground |
 
-**B. 在 Arduino IDE 上使用 GCP125 进行开发**
+**B. Developing with GCP125 on Arduino IDE**
 
-- **a**. 将GCP125蓝牙主板与PC通过USB转USB MINI连接线连接起来
-- b. [安装最新版Arduino ADE](https://www.arduino.cc/en/software/)
+- **a.** Connect the GCP125 Bluetooth mainboard to a PC using a USB-to-USB Mini cable.
+- **b.** [Install the latest version of Arduino IDE](https://www.arduino.cc/en/software/).
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
+![Arduino IDE Installation](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image10.png?raw=true)
 
-- c. 启动Arduino ADE，点击File > Preferences，点击Additional boards manager URLs，将[https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json](https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json)填入并点击OK
+- **c.** Launch Arduino IDE, click *File > Preferences*, click *Additional Boards Manager URLs*, enter [https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json](https://raw.githubusercontent.com/GreenChipJM/GCP125_Assets/refs/heads/main/package_GreenChip_index.json), and click *OK*.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
+![Preferences](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image11.png?raw=true)
 
-- d. 点击Tools > Board > Boards Manager
+- **d.** Click *Tools > Board > Boards Manager*.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
+![Boards Manager](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image12.png?raw=true)
 
-- e. 在弹出的界面点击搜索栏输入GreenChip, 然后点击INSTALL
+- **e.** In the pop-up window, type *GreenChip* in the search bar and click *INSTALL*.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image13.png?raw=true)
+![Install GreenChip](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image13.png?raw=true)
 
-- f. 选择FIle > Examples > GCP125 > ECG_BT或其他示例
+- **f.** Select *File > Examples > GCP125 > ECG_BT* or other examples.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image21.png?raw=true)
+![Select Example](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image21.png?raw=true)
 
-- g. 选择Tools > Board > GreenChip GCP125 > GCP125 nRF52840
+- **g.** Select *Tools > Board > GreenChip GCP125 > GCP125 nRF52840*.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image14.png?raw=true)
+![Select Board](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image14.png?raw=true)
 
-- h. 选择Tools> Port > COMXX (GCP125 nRF52840)
+- **h.** Select *Tools > Port > COMXX (GCP125 nRF52840)*.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
+![Select Port](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image16.png?raw=true)
 
-- i. 按下编译+上传按键, 等待烧录, 烧录成功显示Device programmed
+- **i.** Press the *Compile + Upload* button, wait for the upload, and a successful upload will display *Device programmed*.
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image22.png?raw=true)
+![Successful Upload](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image22.png?raw=true)
 
-**C. 附录。如果你遇到了什么麻烦......尝试重新烧录 Bootloader!!!**
+**C. Appendix: If You Encounter Issues... Try Re-burning the Bootloader!!!**
 
-方法 1：仅通过 USB 数据线将 GCP125蓝牙主板板连接到 PC。
+**Method 1**: Connect the GCP125 Bluetooth mainboard to a PC using only a USB cable.
 
-- I. 选择Tools > Board > GreenChip GCP125> GCP125 nRF52840
-- II. 选择Tools > Port > COMXX (GCP125 nRF52840)
-- III. 选择Tools > Programmer > GCP125 Official Firmware
-- IV. 选择Tools > Burn Bootloader
-- V. 等待约 10~20 秒。
-- **成功刻录的图**
+- **I.** Select *Tools > Board > GreenChip GCP125 > GCP125 nRF52840*.
+- **II.** Select *Tools > Port > COMXX (GCP125 nRF52840)*.
+- **III.** Select *Tools > Programmer > GCP125 Official Firmware*.
+- **IV.** Select *Tools > Burn Bootloader*.
+- **V.** Wait for approximately 10–20 seconds.
+- **Successful Burn Image**
 
-![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image23.png?raw=true)
+![Successful Burn](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image23.png?raw=true)
 
-方法 2： 通过 J-Link 设备和 USB 数据线将GCP125蓝牙主板连接到 PC。（仅限致命错误）
+**Method 2**: Connect the GCP125 Bluetooth mainboard to a PC using a J-Link device and USB cable (for critical errors only).
 
-- I. 要使用 J-Link，用户应在此处安装驱动程序[**。**](https://www.segger.com/downloads/jlink/)
-- II. 选择您的操作系统并点击下载。
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image24.png?raw=true)
-    
-- III. 安装驱动程序。
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image25.png?raw=true)
-    
-- IV. 将 GCP125-MDBT50Q和 J-link 连接到您的 PC。
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image26.png?raw=true)
-    
-- V. 启动 Arduino IDE。
-- VI. 选择Tools > Board > GreenChip GCP125> GCP125 nRF52840
-- VII. 选择Tools > Port > COMXX (GCP125 nRF52840)
-- VIII. 选择Tools > Programmer > J-Link for GCP125 nRF52
-- IX. 选择Tools > Burn Bootloader
-- X. 等待约 10~20 秒。
-- **成功刻录的图**
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image27.png?raw=true)
-    
+- **I.** To use J-Link, install the drivers [here](https://www.segger.com/downloads/jlink/).
+- **II.** Select your operating system and click download.
 
-# **3. [常见问题 （FAQ）]**
+![J-Link Download](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image24.png?raw=true)
 
-**Q1 -> 如果您对** GCP125**默认固件有问题......**
+- **III.** Install the drivers.
 
-1. 请确认你的 arduino IDE 在执行GCP125**默认固件 / 应用程序 - 固件设置步骤**中的步骤后，是否有下图所示的注释。
-    
-    ![](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image28.png?raw=true)
-    
-2. 请勿移除您的设备并重新执行GCP125 **默认固件/应用程序 - 固件设置步骤**的第 4~5 步。
+![Driver Installation](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image25.png?raw=true)
 
-**Q2 -> 如果您在 Arduino IDE 中工具 > 开发板无法找到GCP125**
+- **IV.** Connect the GCP125-MDBT50Q and J-Link to your PC.
 
-请下载最新的 Arduino IDE 版本。
+![J-Link Connection](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image26.png?raw=true)
+
+- **V.** Launch Arduino IDE.
+- **VI.** Select *Tools > Board > GreenChip GCP125 > GCP125 nRF52840*.
+- **VII.** Select *Tools > Port > COMXX (GCP125 nRF52840)*.
+- **VIII.** Select *Tools > Programmer > J-Link for GCP125 nRF52*.
+- **IX.** Select *Tools > Burn Bootloader*.
+- **X.** Wait for approximately 10–20 seconds.
+- **Successful Burn Image**
+
+![Successful J-Link Burn](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image27.png?raw=true)
+
+# **3. [Frequently Asked Questions (FAQ)]**
+
+**Q1 -> If you have issues with the default GCP125 firmware...**
+
+1. Confirm whether your Arduino IDE displays the annotation shown below after completing the steps in **Default Firmware/Application - Firmware Setup Steps**.
+
+![Firmware Issue](https://github.com/GreenChipJM/GCP125_Assets/blob/main/png/image28.png?raw=true)
+
+2. Do not remove your device and re-execute steps 4–5 of the **Default Firmware/Application - Firmware Setup Steps**.
+
+**Q2 -> If you cannot find GCP125 under Tools > Board in Arduino IDE**
+
+Please download the latest version of Arduino IDE.
